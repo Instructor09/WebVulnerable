@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Mensaje</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Introduce tu mensaje</h1>
+        <form id="messageForm">
+            <input type="text" id="userMessage" placeholder="Escribe tu mensaje aquí" required>
+            <button type="submit">Enviar</button>
+        </form>
+        <div id="displayMessage" class="message"></div>
+    </div>
+
+    <script>
+        document.getElementById('messageForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var message = document.getElementById('userMessage').value;
+            document.getElementById('displayMessage').textContent = message;
+        });
+    </script>
+</body>
+</html>
